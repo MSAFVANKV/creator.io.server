@@ -11,8 +11,8 @@ import cookieParser from "cookie-parser";
 import connectDB from "./Db/db.js";
 
 // imported routes
-import todoRoutes from "./Routers/todosRoute.js";
-import userRoutes from "./Routers/userRoute.js";
+import todoRoutes from "./RoutersApi/todosRoute.js";
+import userRoutes from "./RoutersApi/userRoute.js";
 
 const app = express();
 dotenv.config({ path: ".env" });
