@@ -37,23 +37,23 @@ app.use(
   })
 );
 // Session middleware
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true, maxAge: 24 * 60 * 60 * 1000 }, // Set to true if using HTTPS
-  })
-);
-// app.use(session({
-//     secret: 'your-secret-key',
+// app.use(
+//   session({
+//     secret: process.env.SESSION_SECRET,
 //     resave: false,
 //     saveUninitialized: true,
-//     cookie: {
-//         httpOnly: true,
-//         maxAge: 24 * 60 * 60 * 1000 // 24 hours
-//     }
-// }));
+//     cookie: { secure: true, maxAge: 24 * 60 * 60 * 1000 }, // Set to true if using HTTPS
+//   })
+// );
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    }
+}));
 // Route to create a new todo
 app.use("/todos", todoRoutes); // Set up the /todos route
 app.use("/user", userRoutes); // Set up the /todos route
