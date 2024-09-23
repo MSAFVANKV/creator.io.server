@@ -31,8 +31,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
-    methods: "GET,POST,PUT,DELETE",
+    origin: 'https://creators-io.vercel.app',
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
     credentials: true,
   })
 );
